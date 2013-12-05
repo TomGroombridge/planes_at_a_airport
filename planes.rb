@@ -1,4 +1,4 @@
-class Planes
+class Planes 
 
 	def initialize
        @landed = true
@@ -12,6 +12,7 @@ class Planes
 
     def not_cleared?
        @not_cleared 
+       @landed
     end
 
     def ready
@@ -20,6 +21,7 @@ class Planes
 
     def take_off
         @landed = false
+        @not_cleared = false
     end
 
     def land

@@ -1,4 +1,4 @@
-class Airport
+class Airport 
 
 	def initialize  
 		@capcaity = 20 
