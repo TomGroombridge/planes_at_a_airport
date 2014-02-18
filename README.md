@@ -1,14 +1,36 @@
-Imagine you're writing software to control the flow of planes at an airport. The planes can land and take off provided that the weather is sunny. Ocassionally it may be stormy, in which case no planes can land or take off.
+Airport
+=======
 
-Your task is to creat a set of classes/modules to make the given test suite pass. You will need to use random number generator to set the weather (it is normally sunny but on rare occasions it may be stormy). In your tests, you'll need to use stubbing to overide random weather. Finally, every plane must have a status indicating whether its flying or landed. You may expand on the original tests. 
+### Makers Academy Week 3 - Test
 
-(stubbing is something that we haven't touched yet - you'll need to read the documentation to learn how to use test doubles: https://www.relishapp.com/rspec/rspec-mocks/docs. There's an example of using a test double to test a die that's relevant to testing random weather in the test.)
+This test was set by Enrique Comba Riepenhausen
+[@ecomba](http://twitter.com/ecomba) and Alex Peattie
+[@alexpeattie](https://twitter.com/alexpeattie) whilst learning to code at
+[Makers Academy](http://www.makersacademy.com). The aim was to build an
+object oriented model of airports and planes in Ruby.
 
-The tests are located at http://bit.ly/1dFDf1
+I wrote this code alone using RSpec for TDD. The primary aim of this test was to write clean, simple,
+readable code.
 
-Please create seperate files for every class, module and test suite. Commit it to a repo on Github by the end of the day (or on the weekend if you started late).
 
-The submission will be judged on the follwing criteria: 
-- Test Pass
-- Tests coverage is good 
-- The code is elegant: every class had a clear responsibilty, methos are short etc.
+#### Class Weather
+
+| Responsibilities            | Collaborators |
+| :-------------------------- | :------------ |
+| can be sunny or stormy      | Airport       |                   
+| can switch state at random  |               |
+
+#### Class Plane
+
+| Responsibilities                                    | Collaborators |
+| :-------------------------------------------------- | :------------ |
+| can land at an Airport, if clear to land            | Airport       |
+| can take off from an Airport, if clear to take off  |               |
+
+#### Class Airport
+
+| Responsibilities                             | Collaborators |
+| :------------------------------------------- | :------------ |
+| has a maximum capacity of Planes             | Plane         |
+| has a collection of Planes                   | Weather       |
+| has its own Weather                          |               |
