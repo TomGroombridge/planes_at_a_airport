@@ -36,9 +36,13 @@ def fill_airport(airport)
    end
 
    it "should ground all planes when the weather is stormy" do 
-    Planes.new
+    planes = []
+    plane = Planes.new
+    plane.take_off
+    planes << plane
     airport.forcast('storm')
-   	planes.each_entry {|plane| plane.not_cleared}
+   	planes.each  { |plane| plane.not_cleared?}
+  
 end
    # it "should not allow planes to take off if weather is stormy" do
    #    plane.forcast('sunny')
